@@ -1,5 +1,4 @@
 import axios from "axios";
-import { error } from "console";
 import queryString from "query-string";
 
 const baseURL = 'http://localhost:3001'
@@ -14,14 +13,14 @@ axiosClient.interceptors.request.use(async (config: any) => {
     config.headers = {
         Authorization: accesstoken ? `Bearer ${accesstoken}` : '',
         Accept: 'application/json',
-        ...config.header
+        ...config.headers
     }
 
     return {...config, data: config.data ?? null}
 })
 
 axiosClient.interceptors.response.use((res) => {
-    if(res.data && res.status > 200 && res.status < 300) {
+    if(res.data && res.status >= 200 && res.status < 300) {
         return res.data
     } else {
         return Promise.reject(res.data)

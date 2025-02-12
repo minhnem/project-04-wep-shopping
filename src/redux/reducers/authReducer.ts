@@ -23,5 +23,5 @@ const authSlide = createSlice({
 
 export const authReducer = authSlide.reducer
 export const {addAuth, removeAuth} = authSlide.actions
-export const authState = (state: any) => state.authReducer.data
+export const authSelector = (state: any) => state.authReducer.data
 

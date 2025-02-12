@@ -3,7 +3,7 @@ import { Layout } from 'antd'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 
-const {Content, Footer} = Layout
+const { Content, Footer } = Layout
 
 const Routers = ({ Component, pageProps }: any) => {
 
@@ -11,15 +11,15 @@ const Routers = ({ Component, pageProps }: any) => {
 
   return (
     <>{path && path.includes('/auth') ? (<Layout>
-        <Content>
-            <Component pageProps={pageProps} />
-        </Content>
+      <Content>
+        <Component pageProps={pageProps} />
+      </Content>
     </Layout>) : (<Layout>
-        <HeaderComponent/>
-        <Content>
-            <Component pageProps={pageProps} />
-        </Content>
-        <Footer/>
+      <HeaderComponent />
+      <Content>
+        <Component pageProps={pageProps} />
+      </Content>
+      <Footer />
     </Layout>)
     }</>
   )

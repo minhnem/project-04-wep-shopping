@@ -10,7 +10,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return <Provider store={store}>
     <ConfigProvider theme={{
       token: {
-        colorPrimary: '#131118'
+        colorPrimary: '#131118',
+        fontFamily: 'Manrope, sans-serif',
+        fontSize: 16
       }
     }}>
       <Routers Component={Component} pageProps={pageProps} />
