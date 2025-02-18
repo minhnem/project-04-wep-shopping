@@ -22,7 +22,7 @@ const HeaderComponent = () => {
       <div className='text-right'>
         {
           auth.accesstoken ? (
-            <Button type='text' danger icon={<BiPowerOff size={40} onClick={handleLogout}/>} />
+            <Button type='text' danger onClick={handleLogout} className='p-2'><BiPowerOff size={30}/></Button>
           ) : (
             <Link href={'/auth/login'}>Login</Link>
           )

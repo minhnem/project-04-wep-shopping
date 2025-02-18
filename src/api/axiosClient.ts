@@ -8,8 +8,13 @@ const axiosClient = axios.create({
     paramsSerializer: (params) => queryString.stringify(params)
 })
 
+const getAccesstoken = () => {
+    const res = localStorage.getItem('authCustomer')
+    return res ? JSON.parse(res).accesstoken : ''
+}
+
 axiosClient.interceptors.request.use(async (config: any) => {
-    const accesstoken = ''
+    const accesstoken = getAccesstoken()
     config.headers = {
         Authorization: accesstoken ? `Bearer ${accesstoken}` : '',
         Accept: 'application/json',
